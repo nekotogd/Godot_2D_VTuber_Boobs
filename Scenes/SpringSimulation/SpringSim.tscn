@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/SpringSimulation/SpringPoint.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/SpringSimulation/BasePosition.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/SpringSimulation/SpringSim.gd" type="Script" id=4]
+
+[node name="SpringSim" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 464, 242 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="BasePosition" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="SpringPoint" type="Sprite" parent="."]
+position = Vector2( 240, 192 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+base_position = NodePath("../BasePosition")
