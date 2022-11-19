@@ -30,8 +30,7 @@ func _physics_process(delta : float):
 	var t : float = global_time * speed
 	var d := Vector2.ZERO
 	var start_offset : Vector2 = start_position - base_position.global_position
-	d.x = cos(t) * start_offset.x * exp(-damping * t)
-	d.y = cos(t) * start_offset.y * exp(-damping * t)
+	d = cos(t) * start_offset * exp(-damping * t)
 	global_position = base_position.global_position + d
 	
 	global_time += delta
